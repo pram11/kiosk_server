@@ -12,4 +12,5 @@ class MenuItem(models.Model):
     name = models.CharField(max_length=20)
     price = models.IntegerField()
     set_price = models.IntegerField()
+    set_available = models.BooleanField(default=True)
 

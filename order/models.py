@@ -10,7 +10,7 @@ class Order(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
     waiting_num = models.PositiveIntegerField(null=True,blank=True)
-    status = models.CharField(choices=ORDER_STATUS,max_length=10)
+    status = models.CharField(choices=ORDER_STATUS,max_length=10,default='ordering')
     #주문 처리 기능 추가할 경우 생성
     #user = models.ForeignKey(User,on_delete = models.DO_NOTHING)
 
@@ -21,3 +21,5 @@ class OrderItem(models.Model):
     price = models.PositiveIntegerField()
     is_set = models.BooleanField(default=False)
     amount = models.PositiveIntegerField()
+    name = models.CharField(max_length=20,default="none")
+    set_price = models.IntegerField(default=1000)
